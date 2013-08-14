@@ -3,7 +3,7 @@
 
 # TEAM
 #	 <name> -- <role> -- <twitter>
-	Rafael Bermúdez Míguez -- author -- @rafbermudez
+	Rafael Bermudez Miguez -- author -- @rafbermudez
 
 
 # THANKS

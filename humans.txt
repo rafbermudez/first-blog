@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# Google author
+Author: Rafael Bermudez Miguez SEO Google+ profile: https://plus.google.com/103992033757559510407
+
+# TEAM
+#	 <name> -- <role> -- <twitter>
+	Rafael Bermudez Miguez -- author -- @rafbermudez
+
+
+# THANKS
+#    <name>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery, Modernizr

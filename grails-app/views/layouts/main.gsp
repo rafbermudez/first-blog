@@ -31,13 +31,13 @@
 <body>
 	<div class="header-container">
 		<header class="wrapper clearfix">
-			<a href="/rafbermudez"><img
+			<a href="${createLink(uri: '/', absolute: true)}"><img
 				src="${resource(dir: 'images', file: 'logo.png')}"
 				alt="RafBermudez.com logo" /></a>
 			<nav>
 				<ul>
 					<li><span><a
-							href="${createLink(uri: '/', absolute: true)}"><img
+							href="https://twitter.com/rafbermudez"><img
 								src="${resource(dir: 'images', file: 'twitter-bird-white-on-blue.png')}"
 								alt="logo link rafbermudez twitter" width="30" height="30"></a></span>
 					</li>

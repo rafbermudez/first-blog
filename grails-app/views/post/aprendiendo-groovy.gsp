@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="layout" content="main" />
-<title>aprendiendo-groovy</title>
+<title>RafBermudez.com: aprendiendo-groovy</title>
 </head>
 <body>
 	<article>

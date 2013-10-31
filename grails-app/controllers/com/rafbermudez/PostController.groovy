@@ -10,8 +10,8 @@ class PostController {
 		def nextMonthYear = nextMonth.equals(1)? year+1 : year
 		def dateInitNextMonth = new Date().parse("yyyy/MM/dd", "${nextMonthYear}/${nextMonth}/01")
 		
-		def entry = BlogEntry.findByUrlTitleAndDateCreatedGreaterThanEqualsAndDateCreatedLessThanEquals(urlTitle,
-			dateInitMonth,dateInitNextMonth)
+		def entry = BlogEntry.findByUrlTitleAndDateCreatedGreaterThanEqualsAndDateCreatedLessThanEqualsAndPublished(urlTitle,
+			dateInitMonth,dateInitNextMonth,true)
 
 		render(view:"showPost", model:[entry:entry])
 	}
@@ -23,7 +23,8 @@ class PostController {
 		
 		entries = BlogEntry.findAllByPublished(true,[max:5, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
 		totalEntries = BlogEntry.countByPublished(true, [cache:true])
-		
+		println entries
+		println totalEntries
 		[entries:entries, totalEntries:totalEntries]
 	}
 }

@@ -53,14 +53,15 @@ class BootStrap {
 			<h4>Referencias</h4>
 			<p>* "hello, world", claro ejemplo de programa funcional. 1ª
 				aparición en "The C Programming Language", 1978.</p>
-		</section>"""
+		"""
+		b1.published = true
 		b1.save()
-		
+
 		def b2 = new BlogEntry()
 		b2.author = "rafa"
 		b2.title = "5 maneras de conocer mejor este blog"
 		b2.urlTitle = "5-maneras-de-conocer-mejor-este-blog"
-		b2.body = """<section>
+		b2.body = """
 			<h2>1. Esto no es wordpress...</h2>
 			<p>Ni joomla...ni drupal. Me siento un privilegiado con los CMS.
 				Tuve la suerte de trabajar varios meses full time con estos 3 y son
@@ -106,14 +107,15 @@ class BootStrap {
 			<p>Si me conoces un poco, sabes que pronunciaría esta tecnología.
 				Adelanto que el núcleo del backend estará implementado en Grails, la
 				idea es que también conviva con otras tecnologías alternativas.</p>
-		</section>"""
+		"""
+		b2.published = true
 		b2.save()
 
 		def b3 = new BlogEntry()
 		b3.author = "rafa"
 		b3.title = "Aprendiendo groovy"
 		b3.urlTitle = "aprendiendo-groovy"
-		b3.body = """<section>
+		b3.body = """
 			<p>Groovy es uno de los lenguajes JVM más conocido y popular. Es
 				dinámico y aporta características modernas de programación. Además,
 				para desarrolladores Java la curva de aprendizaje es casi nula.
@@ -185,14 +187,15 @@ class BootStrap {
 				</li>
 			</ul>
 			</p>
-		</section>"""
+		"""
+		b3.published = true
 		b3.save()
-		
+
 		def b4 = new BlogEntry()
 		b4.author = "rafa"
 		b4.title = "Popularidad: Libros por ámbito, un enfoque SEO"
 		b4.urlTitle = "popularidad-libros-por-ambito-un-enfoque-seo"
-		b4.body = """<section>
+		b4.body = """
 			<p>
 				Antes de la aparición de twitter, incluso antes de la indexación de
 				google y sus referidos, ya existía una medida (muchas veces
@@ -269,11 +272,82 @@ class BootStrap {
 			</p>
 			<p>Elabora tus propias conclusiones... ¿Te será útil para futuras
 				decisiones?</p>
-		</section>"""
-		
+		"""
+		b4.published = true
 		b4.save()
 
-		
+		def b5 = new BlogEntry()
+		b5.author = "rafa"
+		b5.title = "Definitive Guide to Grails 2: Imprescindible"
+		b5.urlTitle = "the-definitive-guide-to-grails-2-imprescindible"
+		b5.body ="""
+			<p>Este enero, de la mano de de Graeme Rocher y Jeff Brown
+				apareció la actualización de libro-guía de Grails por antonomasia.
+				Dado que son 2 de los más importantes conocedores del framework
+				(project lead y core committer), se podría catalogar como oficial.</p>
+			<p>
+				Parano los que aún conocéis grails -> <a
+					href="http://es.wikipedia.org/wiki/Grails">wikipedia</a>
+			</p>
+		</section>
+		<section>
+			<h2>¿Qué me voy a encontrar en este libro?</h2>
+			<p>A lo largo de 12 capítulos desmenuza con detalle y maestría
+				las características principales de grails 2. Cubre con creces todas
+				las espectativas que se podrían esperar de la guía, desde un punto
+				básico, o toma de contacto con el framework, hasta un nivel
+				medio-alto sobre el mismo.</p>
+		</section>
+
+		<section>
+			<h2>¿A qué nivel va dirigido?</h2>
+			<p>Válido para todos los niveles de conocimiento sobre grails:</p>
+			<ol>
+				<li>aprender los fundamentos.</li>
+				<li>asentar esos fundamentos, y comenzar a profundizar.</li>
+				<li>dominar el uso del framework.</li>
+			</ol>
+		</section>
+		<section>
+			<h2>Algo más...</h2>
+
+			<p>Gracias a su buena división de capítulos, se puede consultar o
+				revisar puntualmente. Además, te proporcionará el punto de vista
+				necesario para sacarle todo el partido a la documentación oficial
+				del proyecto. Llevo trabajando con Grails casi a diario durante los
+				últimos 2-3 años, y de vez en cuando aún veo interesante repasar
+				algún capítulo.</p>
+			<p>
+				Es una muy buena guía enfocada al uso del framework, pero no entra
+				en detalles internos (no es su propósito, un paso siguiente sería <a
+					href="http://shop.oreilly.com/product/0636920024750.do">Programming
+					Grails</a>, de Burt Beckwith). A su vez, requiere unos conocimientos
+				básicos de programación, aplicaciones web MVC, Hibernate, Spring,
+				html...
+			</p>
+			<p>
+				Si te estás introduciendo, no te preocupes en no comprender
+				íntegramente los capítulos. Quédate con lo fundamental al principio.
+				<b>Prueba</b>. <b>Experimenta</b>. Para tener un verdadero dominio
+				en el uso de grails, es un libro que debería leerse al menos 3
+				veces. Deberías saber con solidez todos y cada uno de los puntos que
+				trata. ¡No te asustes! Pronto te darás cuenta de que son puntos
+				básicos tratados detalladamente. Y lo repetiré: <b>Prueba</b>. <b>Experimenta</b>.
+			</p>
+			<p>Y por poner alguna pega...quizás puedas echar en falta un
+				capítulo básico sobre el uso de groovy, o un mayor énfasis en las
+				buenas prácticas y consejos de uso. Anque supongo que esto puede ser
+				demasiado dependiente del contexto.</p>
+		</section>
+		<section>
+			<h4>Referencias</h4>
+			<p>
+				Disponible en <a
+					href="http://www.amazon.es/s/ref=nb_sb_noss?field-keywords=Definitive%20Guide%20to%20Grails%202">Amazon</a>
+			</p>
+		"""
+		b5.published = true
+		b5.save()
 	}
 	def destroy = {
 	}

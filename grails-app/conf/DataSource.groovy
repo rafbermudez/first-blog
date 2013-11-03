@@ -31,8 +31,10 @@ environments {
 	}
 	production {
 		dataSource {
-			dbCreate = "update"
-			url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+			url = "jdbc:mysql://localhost/rafbermudez_prod?useUnicode=yes&characterEncoding=UTF-8"
+			username = "user"
+			password = "pass"
 			pooled = true
 			properties {
 				maxActive = -1

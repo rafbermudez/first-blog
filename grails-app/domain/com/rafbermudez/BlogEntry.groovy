@@ -10,8 +10,10 @@ class BlogEntry {
 	Boolean published = false
 	
 	//automatic time stamps
-	Date dateCreated
-	Date lastUpdated
+	Date dateCreated 
+	//Date lastUpdated // disable autoTimestamp temporarily
+	
+	static transients = ["year","month"]
 
 
 	static constraints = {
@@ -24,5 +26,15 @@ class BlogEntry {
 	static mapping = {
 		body type:"text"
 		cache true
+		autoTimestamp false // disable autoTimestamp temporarily
+	}
+	
+	String getYear(){
+		return (this.dateCreated.year+1900).toString()
+	}
+	
+	String getMonth(){
+		def realMonth = this.dateCreated.month+1
+		return (realMonth.toString().size().equals(1)?"0"+realMonth.toString():realMonth.toString())
 	}
 }

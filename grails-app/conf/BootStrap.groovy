@@ -8,6 +8,7 @@ class BootStrap {
 		b1.author = "rafa"
 		b1.title = "Hello, world"
 		b1.urlTitle = "hello-world"
+		b1.dateCreated = new Date().parse("dd/MM/yyyy", "13/08/2013")
 		b1.body = """<section>
 			<p>Como marca la tradición*, no habría mejor manera de titular
 				este post. Evitaré presentarme, mis enlaces a las diferentes redes
@@ -61,6 +62,7 @@ class BootStrap {
 		b2.author = "rafa"
 		b2.title = "5 maneras de conocer mejor este blog"
 		b2.urlTitle = "5-maneras-de-conocer-mejor-este-blog"
+		b2.dateCreated = new Date().parse("dd/MM/yyyy", "20/08/2013")
 		b2.body = """
 			<h2>1. Esto no es wordpress...</h2>
 			<p>Ni joomla...ni drupal. Me siento un privilegiado con los CMS.
@@ -115,6 +117,7 @@ class BootStrap {
 		b3.author = "rafa"
 		b3.title = "Aprendiendo groovy"
 		b3.urlTitle = "aprendiendo-groovy"
+		b3.dateCreated = new Date().parse("dd/MM/yyyy", "26/08/2013")
 		b3.body = """
 			<p>Groovy es uno de los lenguajes JVM más conocido y popular. Es
 				dinámico y aporta características modernas de programación. Además,
@@ -195,6 +198,7 @@ class BootStrap {
 		b4.author = "rafa"
 		b4.title = "Popularidad: Libros por ámbito, un enfoque SEO"
 		b4.urlTitle = "popularidad-libros-por-ambito-un-enfoque-seo"
+		b4.dateCreated = new Date().parse("dd/MM/yyyy", "09/09/2013")
 		b4.body = """
 			<p>
 				Antes de la aparición de twitter, incluso antes de la indexación de
@@ -280,6 +284,7 @@ class BootStrap {
 		b5.author = "rafa"
 		b5.title = "Definitive Guide to Grails 2: Imprescindible"
 		b5.urlTitle = "the-definitive-guide-to-grails-2-imprescindible"
+		b5.dateCreated = new Date().parse("dd/MM/yyyy", "14/09/2013")
 		b5.body ="""
 			<p>Este enero, de la mano de de Graeme Rocher y Jeff Brown
 				apareció la actualización de libro-guía de Grails por antonomasia.
@@ -348,6 +353,91 @@ class BootStrap {
 		"""
 		b5.published = true
 		b5.save()
+		
+		def b6 = new BlogEntry()
+		b6.author = "rafa"
+		b6.title = "Codemotion: Review"
+		b6.urlTitle = "codemotion-review"
+		b6.dateCreated = new Date().parse("dd/MM/yyyy", "26/10/2013")
+		b6.body ="""
+<p>
+				Este finde acudí a la <a href=http://codemotion.es/">codemotion</a>
+				en Madrid, seguramente el evento para desarrolladores más
+				multitudinario del año, tanto para lo bueno (tracks múltiples,
+				muchas tecnologías y temas tratados, ...), como para lo malo (sobre
+				todo algunas aglomeraciones).
+			</p>
+			<p>Tenía todo preparado, pero aparecieron imprevistos. Comencé el
+				viaje antes del vuelo en urgencias, por una otitis. Y terminé la
+				vuelta también en urgencias, por placas. Aún así aproveché muchas
+				charlas, dejaré mi impresión sobre ellas y el evento en general.</p>
+
+			<section>
+				<h2>Codemotion Madrid 2013</h2>
+				<p><u>Organización</u>: Correcta. Quizás hubo fallos puntuales como los
+					típicos líos devidos a la masificación. Algunas salas eran pequeñas
+					por lo que había que estar muy atento a llegar con antelación. Y
+					falta de micrófonos en algunos tracks.</p>
+				<p><u>Stands</u>: No me interesaba así que no me paré mucho con ellos.
+					No puedo valorar más allá de que estaban siempre sonriendo y
+					receptivos, y eso es un mérito porque no es un trabajo fácil. Eché
+					en falta pantallotes con presentaciones de productos, no entendí
+					muy bien a qué target estaban enfocados.</p>
+				<p><u>Meetups, hackatlon, etc</u>: El programa no especificaba que
+					tratarían, así que preferí invertir mi tiempo en las charlas</p>
+				<p><u>Charlas</u>: Sobre el papel eran muy variadas y para diferentes
+					niveles. Y eso me encontré. Un poco de todo. No era fácil
+					escogerlas, algunas me colisionaban. Tenía 4 fijas (las de Grails y
+					la de competencias y perfiles). En otras franjas preferí descansar.
+					Al fin y al cabo no me encontraba bien y fuí a título personal, por
+					lo que no tenía que rendirle cuentas a nadie</p>
+			</section>
+			<section>
+				<h2>Charlas a las que acudí</h2>
+				<ul>
+					<li><u>Desarrollo de Apps móviles nativas</u>: Como toma de contacto
+						estuvo bien. Actualmente no me dedico a las apps móviles, pero
+						siempre es bueno mantener la perspectiva. Algunas opciones ya las
+						conocía y otras fueron curiosas. Lástima el calor y la
+						masificación de la sala, habría sido perfecta.</li>
+					<li><u>Las APIs [SaaS] abren la puerta a nuevos desarrolladores</u>:
+						Se trataron varios conceptos buenos, pero eché en falta un poco
+						más de profundidad técnica.</li>
+					<li><u>Competencias y perfiles profesionales del sector TIC a
+						nivel nacional</u>: Simplemente genial. Muchos datos a tener en cuenta
+						para esta profesión, y refuerza las ideas que tenía en mente.
+						Maximilien tiene grandes habilidades de comunicación, incluso en
+						un idioma no nativo (es belga).</li>
+					<li><u>Agile anti-patterns. Yes your projects can and will fail
+						tool</u>: Ví que tenía que estar de pie y que no escuchaba bien. Así
+						que la cambié por una cocacola. Una pena. Creo que prometía
+						bastante.</li>
+					<li><u>The internet of things</u>: Charla nada técnica y bastante
+						curiosa. Me gustó, de esas charlas que acaban y te dejan pensando
+						en el tema.</li>
+					<li><u>Grails vs XSS</u>: La charla estaba muy preparada y eso se
+						nota para bien. Es el tipo de charlas que busco sobre Grails:
+						gente de un nivel superior que consigue aportarme cosas que no
+						tenía en cuenta.</li>
+					<li><u>Developing SPI applications using Angular</u>: Álvaro tuvo que
+						luchar contra la fama de David Bonilla. Ya había tocado este tema
+						en la Greach pero aún así acudí. Y no decepcionó. Estuvo muy
+						por encima de la media de las charlas. Sólo por ver esta charla ya
+						merece la pena pagarse el viaje y la estancia. Intentaré
+						adentrarme un poco más en este tema.</li>
+					<li><u>El diablo está en los detalles</u>: Ni fué conceptual ni técnica. Muy amena pero esperaba
+						algo más de esta charla.</li>
+						<li><u>¡Quiero tiempo real y lo quiero para ayer!</u>: Iván es un buen orador, y además encierra grandes conocimientos. Pero lo que no me esperaba era una charla tan magnífica. El título era llamativo pero se quedaba bastante corto para lo que allí se expuso. Arquitecturas orientadas a eventos, Spring integration,... un lujazo. Gran sorpresa.   </li>
+				</ul>
+			</section>
+			<section>
+				<h2>Conclusiones</h2>
+				<p>A veces no se valora el tener charlas de este nivel a precios
+					muy adsequibles, sobre todo si eres de Madrid. Pero en Galicia,
+					escasean los eventos de este tipo. Hubo un poco de todo y las charlas de Grails fueron excepcionales. Seguramente volveré el año que viene, espero que más acompañado y en mejores condiciones :). </p>"""
+		b6.published = true
+		b6.save()
+		
 	}
 	def destroy = {
 	}

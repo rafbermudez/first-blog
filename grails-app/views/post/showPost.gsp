@@ -15,7 +15,7 @@
 		</section>
 		<footer>
 			<a href="https://twitter.com/share" class="twitter-share-button"
-				data-url="http://rafbermudez.com/post/${year}/${monthOfYear}/${entry.urlTitle}"
+				data-url="http://rafbermudez.com/post/${entry.year}/${entry.month}/${entry.urlTitle}"
 				data-text="${entry.urlTitle}"
 				data-via="rafbermudez" data-lang="es" data-hashtags="${entry.hashTags}">Twittear</a>
 			<script>

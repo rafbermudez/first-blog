@@ -21,7 +21,7 @@ class PostController {
 		def entries
 		def totalEntries
 		
-		entries = BlogEntry.findAllByPublished(true,[max:5, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
+		entries = BlogEntry.findAllByPublished(true,[max:10, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
 		totalEntries = BlogEntry.countByPublished(true, [cache:true])
 		println entries
 		println totalEntries

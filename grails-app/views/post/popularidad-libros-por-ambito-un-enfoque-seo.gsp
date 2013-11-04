@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="layout" content="main" />
-<title>RafBermudez.com: popularidad-libros-por-ambito-un-enfoque-seo</title>
+<title>aprendiendo-groovy</title>
 </head>
 <body>
 	<article>

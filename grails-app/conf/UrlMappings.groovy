@@ -2,7 +2,7 @@ class UrlMappings {
 
 	static mappings = {
 		
-		"/post/$year/$month/$title"(controller:'post', action:'show')
+		"/post/$year/$month/$urlTitle"(controller:'post', action:'show')
 		
 		"/$controller/$action?/$id?"{
 			constraints {
@@ -10,7 +10,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(controller:"post",action:"list")
 		"500"(view:'/error')
 	}
 }

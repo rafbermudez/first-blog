@@ -1,8 +1,13 @@
-import com.rafbermudez.BlogEntry
+import com.rafbermudez.*
 
 class BootStrap {
 
 	def init = { servletContext ->
+		
+		def c1 = new Category(name:"Otros").save()
+		def c2 = new Category(name:"Groovy & Grails").save()
+		def c3 = new Category(name:"Libros").save()
+		
 
 		def b1 = new BlogEntry()
 		b1.author = "rafa"
@@ -56,6 +61,7 @@ class BootStrap {
 				aparición en "The C Programming Language", 1978.</p>
 		"""
 		b1.published = true
+		b1.addToCategorys(c1)
 		b1.save()
 
 		def b2 = new BlogEntry()
@@ -111,6 +117,7 @@ class BootStrap {
 				idea es que también conviva con otras tecnologías alternativas.</p>
 		"""
 		b2.published = true
+		b2.addToCategorys(c1)
 		b2.save()
 
 		def b3 = new BlogEntry()
@@ -192,6 +199,7 @@ class BootStrap {
 			</p>
 		"""
 		b3.published = true
+		b3.addToCategorys(c2)
 		b3.save()
 
 		def b4 = new BlogEntry()
@@ -278,6 +286,7 @@ class BootStrap {
 				decisiones?</p>
 		"""
 		b4.published = true
+		b4.addToCategorys(c3)
 		b4.save()
 
 		def b5 = new BlogEntry()
@@ -352,6 +361,8 @@ class BootStrap {
 			</p>
 		"""
 		b5.published = true
+		b5.addToCategorys(c2)
+		b5.addToCategorys(c3)
 		b5.save()
 		
 		def b6 = new BlogEntry()
@@ -436,6 +447,7 @@ class BootStrap {
 					muy adsequibles, sobre todo si eres de Madrid. Pero en Galicia,
 					escasean los eventos de este tipo. Hubo un poco de todo y las charlas de Grails fueron excepcionales. Seguramente volveré el año que viene, espero que más acompañado y en mejores condiciones :). </p>"""
 		b6.published = true
+		b6.addToCategorys(c1)
 		b6.save()
 		
 	}

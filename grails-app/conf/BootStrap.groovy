@@ -3,11 +3,11 @@ import com.rafbermudez.*
 class BootStrap {
 
 	def init = { servletContext ->
-		
+
 		def c1 = new Category(name:"Otros").save()
 		def c2 = new Category(name:"Groovy & Grails").save()
 		def c3 = new Category(name:"Libros").save()
-		
+
 
 		def b1 = new BlogEntry()
 		b1.author = "rafa"
@@ -364,7 +364,7 @@ class BootStrap {
 		b5.addToCategorys(c2)
 		b5.addToCategorys(c3)
 		b5.save()
-		
+
 		def b6 = new BlogEntry()
 		b6.author = "rafa"
 		b6.title = "Codemotion: Review"
@@ -449,7 +449,46 @@ class BootStrap {
 		b6.published = true
 		b6.addToCategorys(c1)
 		b6.save()
-		
+
+		def b7 = new BlogEntry()
+		b7.author = "rafa"
+		b7.title = "Review: Gestión ágil de proyectos software"
+		b7.urlTitle = "gestion-agil-proyectos-software-review"
+		b7.dateCreated = new Date().parse("dd/MM/yyyy", "29/11/2013")
+		b7.body ="""<p>
+Para quién esté interesado en conocer el mundo del software y la agilidad, acerco este libro en español de Garzás Parra, Javier / Enriquez J. / Irrazabal E. Tanto en <a href="http://www.amazon.es/Gesti%C3%B3n-Proyectos-Software-Javier-Garz%C3%A1s-ebook/dp/B008B8FQZM">amazon</a> como en la web de <a href="http://www.kybeleconsulting.com/gestion-agil-de-proyectos-software/">kybele</a> podéis adquirirlo en los diferentes formatos, a un precio bastante competitivo. </p>
+
+<p>
+Hace unos meses opté por la edición impresa y, en serio, os aconsejo que le echéis un vistazo para introduciros o afianzar conceptos. Me encanta su lectura fácil, este no es el típico tostón de libro lleno de supertecnicismos. Y aún por encima no es traducción, ¡es en Español! Sus autores saben de lo que escriben, no muestran posiciones extremistas y el enfoque es muy bueno. Por leerlo no te convertirás en un experto sobre agilidad pero... estarás en el camino indicado para serlo. </p>
+
+<p>
+Dejo la lista de los capítulos
+<ul>
+<li>Capítulo 1: Érase una vez un proyecto ágil </li>
+<li>Capítulo 2: El Manifiesto Ágil</li>
+<li>Capítulo 3: Las historias de usuario</li>
+<li>Capítulo 4: Scrum</li>
+<li>Capítulo 5: Planificación y estimación ágil</li>
+<li>Capítulo 6: Lean Software Development y Kanban</li>
+<li>Capítulo 7: Métricas y seguimiento de proyectos ágiles</li>
+<li>Capítulo 8: EXtreme Programming</li>
+<li>Capítulo 9: Buenas prácticas de desarrollo para proyectos ágiles</li>
+<li>Capítulo 10: Metodologías ágiles y modelos de procesos software (CMMI e ISO 15504)</li>
+<li>Capítulo 11: Contratos ágiles</li>
+<li>Capítulo 12: Los proyectos ágiles y el Desarrollo Global del Software</li>
+<li>Capítulo 13: La implantación de las prácticas ágiles en la empresa</li>
+<li>Anexo: Herramientas para la gestión ágil</li>
+</ul>
+</p>
+<p>
+<b>Gestión ágil de proyectos software</b>. ISBN: 978-84-615-9003-2, 222 páginas, editorial: Kybele Consulting</p>
+<p>
+ PD: Aún no he podido leerlo, pero para quién busque una continuación, se acaba de publicar "Cómo sobrevivir… A la planificación de un proyecto ágil" , de Javier Garzas también.
+ </p>
+"""
+		b7.published = true
+		b7.addToCategorys(c3)
+		b7.save()
 	}
 	def destroy = {
 	}

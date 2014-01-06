@@ -491,6 +491,53 @@ Dejo la lista de los capítulos
 		b7.published = true
 		b7.addToCategorys(c3)
 		b7.save()
+		
+		def b8 = new BlogEntry()
+		b8.author = "rafa"
+		b8.title = "Objetivos para 2014"
+		b8.urlTitle = "objetivos-para-2014"
+		b8.dateCreated = new Date().parse("dd/MM/yyyy", "02/01/2014")
+		b8.body ="""<p>Dejaré un post clásico con los objetivos que me planteo para este año.</p>
+<ul>
+<li><p><b>Entregar el proyecto fin de carrera.</b></p>
+	<p>
+		Ya toca. Por diversos motivos a veces se ordenan ilógicamente las prioridades y son cosas que se posponen. A favor, que lo tengo terminado y acabo de presentar el anteproyecto. Sólo queda completar la memoria, la presentación y pequeños ajustes.
+	</p>	
+</li>
+<li><p><b>Aprender inglés (de verdad).</b></p>
+	<p>
+		Que me es imposible tener una conversación más allá de lo banal es un hecho, necesito ganar agilidad. He comenzado el método Vaughan, acudir por temporadas a una academia e intentaré hacer un gran esfuerzo para poder completarlo con una estancia relativamente amplia en Londres.
+	</p>	
+</li>
+<li><p><b>Cubrir el ciclo de netGA y asentar las bases para netGA 2.0.</b></p>
+	<p>
+		 Abordar las tareas clave que nos faltan para sentir completo este proyectazo y asentar las bases para el futuro netGA 2.0 del que ya se ha comenzado a hablar.
+	</p>	
+</li>
+<li><p><b>Leer al menos 3 libros técnicos.</b></p>
+	<p>
+		 Una iniciativa que hice este año gracias a los consejos de Javier Garzas  y me ha enriquecido bastante.
+	</p>	
+</li>
+<li><p><b>Acudir al menos a 3 eventos de interés profesional.</b></p>
+	<p>
+		 Otra de las iniciativas que realicé y quiero repetir. La Greach lo marco como fijo. También me gustaría acudir a alguno de los eventos europeos groovy/grails de referencia e intentaré guardar tiempo para otro más generalista como la codemotion y a alguno metodológico. Además, cualquier que se realice por esta zona y sea de mi interés.
+	</p>	
+</li>
+<li><p><b>Empujar rafbermudez.com</b></p>
+	<p>
+		 blablabla
+	</p>	
+</li>
+</ul>
+</p>
+<p>
+ 
+ </p>
+"""
+		b8.published = true
+		b8.addToCategorys(c1)
+		b8.save()
 	}
 	def destroy = {
 	}

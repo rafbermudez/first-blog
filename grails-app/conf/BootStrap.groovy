@@ -506,7 +506,7 @@ Dejo la lista de los capítulos
 </li>
 <li><p><b>Aprender inglés (de verdad).</b></p>
 	<p>
-		Que me es imposible tener una conversación más allá de lo banal es un hecho, necesito ganar agilidad. He comenzado el método Vaughan, acudir por temporadas a una academia e intentaré hacer un gran esfuerzo para poder completarlo con una estancia relativamente amplia en Londres.
+		Que me es imposible tener una conversación más allá de lo banal es un hecho, necesito ganar agilidad. He comenzado el método Vaughan, a acudir por temporadas a una academia e intentaré hacer un gran esfuerzo para poder completarlo con una estancia relativamente amplia en Londres.
 	</p>	
 </li>
 <li><p><b>Cubrir el ciclo de netGA y asentar las bases para netGA 2.0.</b></p>
@@ -521,23 +521,53 @@ Dejo la lista de los capítulos
 </li>
 <li><p><b>Acudir al menos a 3 eventos de interés profesional.</b></p>
 	<p>
-		 Otra de las iniciativas que realicé y quiero repetir. La Greach lo marco como fijo. También me gustaría acudir a alguno de los eventos europeos groovy/grails de referencia e intentaré guardar tiempo para otro más generalista como la codemotion y a alguno metodológico. Además, cualquier que se realice por esta zona y sea de mi interés.
+		 Otra de las iniciativas que realicé y quiero repetir. La Greach lo marco como fijo. También me gustaría acudir a alguno de los eventos europeos groovy/grails de referencia e intentaré guardar tiempo para otro más generalista como la codemotion y alguno metodológico. Además, cualquiera que se realice por esta zona y sea de mi interés.
 	</p>	
 </li>
 <li><p><b>Empujar rafbermudez.com</b></p>
 	<p>
-		 blablabla
+		 Uno de los proyectos que he comenzado este año. Avanza más lentamente de lo que me gustaría, pero ahí está, poco a poco. Cuando tenga más funcionalidades integradas espero que sea más fácil llevarlo. El código y el seguimiento están disponibles en mi cuenta <a href="https://github.com/rafbermudez/rafbermudez">github</a> 
 	</p>	
 </li>
 </ul>
 </p>
-<p>
- 
- </p>
 """
 		b8.published = true
 		b8.addToCategorys(c1)
 		b8.save()
+		
+		def b9 = new BlogEntry()
+		b9.author = "rafa"
+		b9.title = "Greach 3.0"
+		b9.urlTitle = "greach-3.0"
+		b9.dateCreated = new Date().parse("dd/MM/yyyy", "07/01/2014")
+		b9.body ="""
+	<p>
+		Hace nada que se abrió el plazo para inscribirse y asistir a la Greach 3.0. El evento español más importante en torno al mundo Groovy & Grails y posiblemente llamado a convertirse en una referencia Europea.
+	</p>
+<p>
+		El año pasado acudí por primera vez y me dejó muy buen sabor de boca, con ganas de repetir. Tanto que en esta nueva edición este blog ya forma parte de los colaboradores oficiales.
+</p>
+</section>
+		<section>
+			<h2>¿Por qué colaborar?</h2>
+<p>
+		Tras alguna conversación con Alberto, la falta de patrocinadores era uno de los obstáculos para que se celebrase. Lo lógico es que si vivo de esta tecnología, me preocupe de que esto siga siendo así. Es como una forma de devolver lo que me ha proporcionado. Y aún por encima seguro que me proporcionará numerosas ventajas, como mayor visibilidad ( muy útil estando en esta esquina del país ). Resumiendo: ayuda al evento, poder disfrutarlo, aprendizaje del mismo, una nueva experiencia y marketing personal. Un precio muy reducido para recibir tanto a cambio.
+</p>
+</section>
+		<section>
+<p>
+		Se celebrará el 28 y 29 de Marzo en Madrid. Toda la información detallada en su web oficial: <a href="http://greach.es">greach.es</a>
+	</p>
+<p>
+		<b>¡No os lo perdáis!</b>
+	</p>
+
+"""
+		b9.published = true
+		b9.addToCategorys(c1)
+		b9.addToCategorys(c2)
+		b9.save()
 	}
 	def destroy = {
 	}

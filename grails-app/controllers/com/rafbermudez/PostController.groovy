@@ -27,4 +27,21 @@ class PostController {
 		println totalEntries
 		[entries:entries, totalEntries:totalEntries]
 	}
+	
+	def create(){
+		
+	}
+	
+	def saveBlogEntry(){
+		
+		def entry = new BlogEntry(params)
+		entry.author = "rafa"
+		entry.dateCreated = new Date()
+		if (!entry.save()) {
+			entry.errors.each {
+				println it
+			}
+		}
+		redirect(action:"list")
+	}
 }

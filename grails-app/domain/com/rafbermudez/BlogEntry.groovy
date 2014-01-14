@@ -2,6 +2,7 @@ package com.rafbermudez
 
 class BlogEntry {
 
+	Integer id
 	String author
 	String title
 	String urlTitle
@@ -14,6 +15,8 @@ class BlogEntry {
 	//Date lastUpdated // disable autoTimestamp temporarily
 	
 	static transients = ["year","month"]
+	
+	static hasMany = [categorys:Category]
 
 
 	static constraints = {

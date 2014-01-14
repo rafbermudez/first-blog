@@ -3,6 +3,13 @@ import com.rafbermudez.*
 class BootStrap {
 
 	def init = { servletContext ->
+		
+		def u = new User(username: 'rafa', password: 'itsasecret').save()
+
+		def c1 = new Category(name:"Otros").save()
+		def c2 = new Category(name:"Groovy & Grails").save()
+		def c3 = new Category(name:"Libros").save()
+
 
 		def b1 = new BlogEntry()
 		b1.author = "rafa"
@@ -56,6 +63,7 @@ class BootStrap {
 				aparición en "The C Programming Language", 1978.</p>
 		"""
 		b1.published = true
+		b1.addToCategorys(c1)
 		b1.save()
 
 		def b2 = new BlogEntry()
@@ -111,6 +119,7 @@ class BootStrap {
 				idea es que también conviva con otras tecnologías alternativas.</p>
 		"""
 		b2.published = true
+		b2.addToCategorys(c1)
 		b2.save()
 
 		def b3 = new BlogEntry()
@@ -192,6 +201,7 @@ class BootStrap {
 			</p>
 		"""
 		b3.published = true
+		b3.addToCategorys(c2)
 		b3.save()
 
 		def b4 = new BlogEntry()
@@ -278,6 +288,7 @@ class BootStrap {
 				decisiones?</p>
 		"""
 		b4.published = true
+		b4.addToCategorys(c3)
 		b4.save()
 
 		def b5 = new BlogEntry()
@@ -352,8 +363,10 @@ class BootStrap {
 			</p>
 		"""
 		b5.published = true
+		b5.addToCategorys(c2)
+		b5.addToCategorys(c3)
 		b5.save()
-		
+
 		def b6 = new BlogEntry()
 		b6.author = "rafa"
 		b6.title = "Codemotion: Review"
@@ -436,8 +449,125 @@ class BootStrap {
 					muy adsequibles, sobre todo si eres de Madrid. Pero en Galicia,
 					escasean los eventos de este tipo. Hubo un poco de todo y las charlas de Grails fueron excepcionales. Seguramente volveré el año que viene, espero que más acompañado y en mejores condiciones :). </p>"""
 		b6.published = true
+		b6.addToCategorys(c1)
 		b6.save()
+
+		def b7 = new BlogEntry()
+		b7.author = "rafa"
+		b7.title = "Review: Gestión ágil de proyectos software"
+		b7.urlTitle = "gestion-agil-proyectos-software-review"
+		b7.dateCreated = new Date().parse("dd/MM/yyyy", "29/11/2013")
+		b7.body ="""<p>
+Para quién esté interesado en conocer el mundo del software y la agilidad, acerco este libro en español de Garzás Parra, Javier / Enriquez J. / Irrazabal E. Tanto en <a href="http://www.amazon.es/Gesti%C3%B3n-Proyectos-Software-Javier-Garz%C3%A1s-ebook/dp/B008B8FQZM">amazon</a> como en la web de <a href="http://www.kybeleconsulting.com/gestion-agil-de-proyectos-software/">kybele</a> podéis adquirirlo en los diferentes formatos, a un precio bastante competitivo. </p>
+
+<p>
+Hace unos meses opté por la edición impresa y, en serio, os aconsejo que le echéis un vistazo para introduciros o afianzar conceptos. Me encanta su lectura fácil, este no es el típico tostón de libro lleno de supertecnicismos. Y aún por encima no es traducción, ¡es en Español! Sus autores saben de lo que escriben, no muestran posiciones extremistas y el enfoque es muy bueno. Por leerlo no te convertirás en un experto sobre agilidad pero... estarás en el camino indicado para serlo. </p>
+
+<p>
+Dejo la lista de los capítulos
+<ul>
+<li>Capítulo 1: Érase una vez un proyecto ágil </li>
+<li>Capítulo 2: El Manifiesto Ágil</li>
+<li>Capítulo 3: Las historias de usuario</li>
+<li>Capítulo 4: Scrum</li>
+<li>Capítulo 5: Planificación y estimación ágil</li>
+<li>Capítulo 6: Lean Software Development y Kanban</li>
+<li>Capítulo 7: Métricas y seguimiento de proyectos ágiles</li>
+<li>Capítulo 8: EXtreme Programming</li>
+<li>Capítulo 9: Buenas prácticas de desarrollo para proyectos ágiles</li>
+<li>Capítulo 10: Metodologías ágiles y modelos de procesos software (CMMI e ISO 15504)</li>
+<li>Capítulo 11: Contratos ágiles</li>
+<li>Capítulo 12: Los proyectos ágiles y el Desarrollo Global del Software</li>
+<li>Capítulo 13: La implantación de las prácticas ágiles en la empresa</li>
+<li>Anexo: Herramientas para la gestión ágil</li>
+</ul>
+</p>
+<p>
+<b>Gestión ágil de proyectos software</b>. ISBN: 978-84-615-9003-2, 222 páginas, editorial: Kybele Consulting</p>
+<p>
+ PD: Aún no he podido leerlo, pero para quién busque una continuación, se acaba de publicar "Cómo sobrevivir… A la planificación de un proyecto ágil" , de Javier Garzas también.
+ </p>
+"""
+		b7.published = true
+		b7.addToCategorys(c3)
+		b7.save()
 		
+		def b8 = new BlogEntry()
+		b8.author = "rafa"
+		b8.title = "Objetivos para 2014"
+		b8.urlTitle = "objetivos-para-2014"
+		b8.dateCreated = new Date().parse("dd/MM/yyyy", "02/01/2014")
+		b8.body ="""<p>Dejaré un post clásico con los objetivos que me planteo para este año.</p>
+<ul>
+<li><p><b>Entregar el proyecto fin de carrera.</b></p>
+	<p>
+		Ya toca. Por diversos motivos a veces se ordenan ilógicamente las prioridades y son cosas que se posponen. A favor, que lo tengo terminado y acabo de presentar el anteproyecto. Sólo queda completar la memoria, la presentación y pequeños ajustes.
+	</p>	
+</li>
+<li><p><b>Aprender inglés (de verdad).</b></p>
+	<p>
+		Que me es imposible tener una conversación más allá de lo banal es un hecho, necesito ganar agilidad. He comenzado el método Vaughan, a acudir por temporadas a una academia e intentaré hacer un gran esfuerzo para poder completarlo con una estancia relativamente amplia en Londres.
+	</p>	
+</li>
+<li><p><b>Cubrir el ciclo de netGA y asentar las bases para netGA 2.0.</b></p>
+	<p>
+		 Abordar las tareas clave que nos faltan para sentir completo este proyectazo y asentar las bases para el futuro netGA 2.0 del que ya se ha comenzado a hablar.
+	</p>	
+</li>
+<li><p><b>Leer al menos 3 libros técnicos.</b></p>
+	<p>
+		 Una iniciativa que hice este año gracias a los consejos de Javier Garzas  y me ha enriquecido bastante.
+	</p>	
+</li>
+<li><p><b>Acudir al menos a 3 eventos de interés profesional.</b></p>
+	<p>
+		 Otra de las iniciativas que realicé y quiero repetir. La Greach lo marco como fijo. También me gustaría acudir a alguno de los eventos europeos groovy/grails de referencia e intentaré guardar tiempo para otro más generalista como la codemotion y alguno metodológico. Además, cualquiera que se realice por esta zona y sea de mi interés.
+	</p>	
+</li>
+<li><p><b>Empujar rafbermudez.com</b></p>
+	<p>
+		 Uno de los proyectos que he comenzado este año. Avanza más lentamente de lo que me gustaría, pero ahí está, poco a poco. Cuando tenga más funcionalidades integradas espero que sea más fácil llevarlo. El código y el seguimiento están disponibles en mi cuenta <a href="https://github.com/rafbermudez/rafbermudez">github</a> 
+	</p>	
+</li>
+</ul>
+</p>
+"""
+		b8.published = true
+		b8.addToCategorys(c1)
+		b8.save()
+		
+		def b9 = new BlogEntry()
+		b9.author = "rafa"
+		b9.title = "Greach 3.0"
+		b9.urlTitle = "greach-3.0"
+		b9.dateCreated = new Date().parse("dd/MM/yyyy", "07/01/2014")
+		b9.body ="""
+	<p>
+		Hace nada que se abrió el plazo para inscribirse y asistir a la Greach 3.0. El evento español más importante en torno al mundo Groovy & Grails y posiblemente llamado a convertirse en una referencia Europea.
+	</p>
+<p>
+		El año pasado acudí por primera vez y me dejó muy buen sabor de boca, con ganas de repetir. Tanto que en esta nueva edición este blog ya forma parte de los colaboradores oficiales.
+</p>
+</section>
+		<section>
+			<h2>¿Por qué colaborar?</h2>
+<p>
+		Tras alguna conversación con Alberto, la falta de patrocinadores era uno de los obstáculos para que se celebrase. Lo lógico es que si vivo de esta tecnología, me preocupe de que esto siga siendo así. Es como una forma de devolver lo que me ha proporcionado. Y aún por encima seguro que me proporcionará numerosas ventajas, como mayor visibilidad ( muy útil estando en esta esquina del país ). Resumiendo: ayuda al evento, poder disfrutarlo, aprendizaje del mismo, una nueva experiencia y marketing personal. Un precio muy reducido para recibir tanto a cambio.
+</p>
+</section>
+		<section>
+<p>
+		Se celebrará el 28 y 29 de Marzo en Madrid. Toda la información detallada en su web oficial: <a href="http://greach.es">greach.es</a>
+	</p>
+<p>
+		<b>¡No os lo perdáis!</b>
+	</p>
+
+"""
+		b9.published = true
+		b9.addToCategorys(c1)
+		b9.addToCategorys(c2)
+		b9.save()
 	}
 	def destroy = {
 	}

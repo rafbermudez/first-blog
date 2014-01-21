@@ -63,5 +63,7 @@ grails.project.dependency.resolution = {
 		
 		compile ':spring-security-core:2.0-RC2'
 		
+		compile ":ckeditor:3.6.6.1.1"
+		
     }
 }

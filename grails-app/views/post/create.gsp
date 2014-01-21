@@ -3,6 +3,7 @@
 <head>
 <meta name="layout" content="main" />
 <title>RafBermudez.com</title>
+<ckeditor:resources />
 </head>
 <body>
 	<article>
@@ -24,8 +25,15 @@
 						<td><g:textField name="hashTags" value="" /></td>
 					</tr>
 					<tr>
-						<td><label>Body</label></td>
-						<td><g:textArea name="body" value="" rows="5" cols="40" /></td>
+						<td><label>Publicado</label></td>
+						<td><g:checkBox name="published" value="${true}" /></td>
+					</tr>
+					<tr>
+					<td colspan="2"><label>Body</label></td>
+					</tr>
+					<tr>
+						<td colspan="2"><ckeditor:editor name="body" height="600px" width="100%"> Escribir aquí
+</ckeditor:editor></td>
 					</tr>
 				</table>
 				<g:submitButton name="CreateBlogEntryButton" value="Create" />

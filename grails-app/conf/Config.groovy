@@ -122,5 +122,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/post/list':					  ['permitAll'],
 	'/post/show':					  ['permitAll'],
 	'/post/create':					  ['IS_AUTHENTICATED_FULLY'],
-	'/post/saveBLogEntry':			  ['IS_AUTHENTICATED_FULLY']]
+	'/post/saveBLogEntry':			  ['IS_AUTHENTICATED_FULLY'],
+	'/post/entryManager':			  ['IS_AUTHENTICATED_FULLY'],
+	'/post/edit':			  ['IS_AUTHENTICATED_FULLY']]
 

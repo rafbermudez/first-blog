@@ -29,19 +29,45 @@ class PostController {
 	}
 	
 	def create(){
-		
+		render(view:"createEditBlogEntry")
 	}
 	
 	def saveBlogEntry(){
 		
-		def entry = new BlogEntry(params)
-		entry.author = "rafa"
-		entry.dateCreated = new Date()
+		def entry 
+		if (params.id){
+			entry = BlogEntry.findById(params.id)
+			entry.properties = params
+		}
+		else{
+			entry = new BlogEntry(params)
+			entry.author = "rafa"
+			entry.dateCreated = new Date()
+		}
+		
 		if (!entry.save()) {
 			entry.errors.each {
 				println it
 			}
 		}
 		redirect(action:"list")
+	}
+	
+	def entryManager(){
+		
+		def entries
+		def totalEntries
+		
+		entries = BlogEntry.findAll([max:10, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
+		totalEntries = BlogEntry.count()
+		println entries
+		println totalEntries
+		[entries:entries, totalEntries:totalEntries]
+	}
+	
+	def edit(Integer id){
+		
+		def entry = BlogEntry.findById(id)
+		render(view:"createEditBlogEntry", model:[entry:entry])
 	}
 }

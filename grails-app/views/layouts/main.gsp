@@ -63,6 +63,18 @@
 			<div id="site-content">
 				<g:layoutBody />
 			</div>
+			
+			<sec:ifLoggedIn>
+			<aside>
+				<h4>Menú interno</h4>
+				<ul>
+					<li><g:link controller="post" action="entryManager">Gestionar entradas</g:link></li>
+					<li><g:link controller="post" action="create">Nueva entrada</g:link></li>
+					<li><g:link controller="logout" action="index">Cerrar sesión</g:link></li>
+				</ul>
+			</aside>
+			</sec:ifLoggedIn>
+			
 			<aside>
 				<h4>Mi nombre es Rafael Bermúdez, entusiasta de la
 					programación, la gestión de procesos y la Ingeniería del Software.</h4>

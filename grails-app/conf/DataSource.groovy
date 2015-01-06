@@ -1,9 +1,7 @@
 dataSource {
 	pooled = true
-	driverClassName = "com.mysql.jdbc.Driver"
-	dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-	username = "sa"
-	password = ""
+	driverClassName = "org.postgresql.Driver"
+        dialect = "org.hibernate.dialect.PostgreSQLDialect"
 }
 hibernate {
 	cache.use_second_level_cache = true
@@ -15,9 +13,7 @@ environments {
 	development {
 		dataSource {
 			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-			url = "jdbc:mysql://localhost/rafbermudez_dev?useUnicode=yes&characterEncoding=UTF-8"
-			username = "user"
-			password = "pass"
+			url = "jdbc:postgresql://localhost:5432/rafbermudez_dev?useUnicode=yes&characterEncoding=UTF-8"
 		}
 		hibernate {   show_sql = true   }
 	}
@@ -25,16 +21,12 @@ environments {
 		dataSource {
 			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
 			url = "jdbc:mysql://localhost/rafbermudez_dev_test?useUnicode=yes&characterEncoding=UTF-8"
-			username = "user"
-			password = "pass"
 		}
 	}
 	production {
 		dataSource {
 			dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
 			url = "jdbc:mysql://localhost/rafbermudez_prod?useUnicode=yes&characterEncoding=UTF-8"
-			username = "user"
-			password = "pass"
 			pooled = true
 			properties {
 				maxActive = -1

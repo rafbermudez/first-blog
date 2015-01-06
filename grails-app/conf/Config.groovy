@@ -11,6 +11,15 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+if(System.getenv("RAFBERMUDEZ_HOME")) {
+        String externalConfigPath = System.getenv("RAFBERMUDEZ_HOME")+"/conf/rafbermudez-env.groovy"
+	println( "Including configuration file: " + externalConfigPath);
+	grails.config.locations = ["file:${externalConfigPath}"]
+} else {
+	println " ERROR: No external configuration file defined (External configuration file is necesary)"
+}
+
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false

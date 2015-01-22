@@ -1,0 +1,15 @@
+
+//Datasource configuration
+
+dataSource {
+        username = "user"
+        password = "thePassword"
+}
+
+
+//Blog configuration
+blog {
+        //user and password for user loaded in BootStrap
+        username = "rafa"
+        password = "thePassword"
+}

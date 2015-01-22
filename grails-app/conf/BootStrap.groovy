@@ -1,10 +1,12 @@
 import com.rafbermudez.*
 
 class BootStrap {
+    
+        def grailsApplication
 
 	def init = { servletContext ->
 		
-		def u = new User(username: 'rafa', password: 'itsasecret').save()
+		def u = new User(username: grailsApplication.config.blog.username, password: grailsApplication.config.blog.password).save()
 
 		def c1 = new Category(name:"Otros").save()
 		def c2 = new Category(name:"Groovy & Grails").save()

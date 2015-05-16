@@ -24,6 +24,8 @@ grails.project.dependency.resolution = {
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
 
+        //mavenRepo 'http://repo.spring.io/milestone' //Uncomment if spring security core plugin can't resolve dependencies
+        
         grailsPlugins()
         grailsHome()
         grailsCentral()
@@ -35,8 +37,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
-		mavenRepo 'http://repo.spring.io/milestone' //Spring security core need it
+        //mavenRepo "http://repository.jboss.com/maven2/"	
     }
 
     dependencies {

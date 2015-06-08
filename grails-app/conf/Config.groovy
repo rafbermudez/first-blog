@@ -129,6 +129,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.rafbermudez.U
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.rafbermudez.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.rafbermudez.Role'
 
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/post/entryManager'
 
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [

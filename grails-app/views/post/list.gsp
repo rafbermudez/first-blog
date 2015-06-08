@@ -14,7 +14,7 @@
 				</a>
 			</header>
 			<section>
-		${entry.body}
+		${raw(entry.body)}
 		</section>
 		<footer>
 			<a href="https://twitter.com/share" class="twitter-share-button"

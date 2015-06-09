@@ -139,12 +139,52 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/index.gsp':                     ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
 	'/**/css/**':                     ['permitAll'],
+        '/**/uploads/**':                 ['permitAll'],
+//        '/ck/**':                     ['IS_AUTHENTICATED_FULLY'],
+//        '/ck/ofm/**':                     ['permitAll'],
+//        '/**/ofm/**':                     ['permitAll'],
+//        '/ofm/**':                     ['permitAll'],
+//        '/ck/ofm/filemanager':           ['permitAll'],
+//    '/ck/ofm/filetree':           ['permitAll'],
+    '/openFileManagerConnector/**':           ['IS_AUTHENTICATED_FULLY'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll'],
-	'/list':               			  ['permitAll'],
-	'/post/list':					  ['permitAll'],
-	'/post/show':					  ['permitAll'],
-	'/post/create':					  ['IS_AUTHENTICATED_FULLY'],
-	'/post/saveBLogEntry':			  ['IS_AUTHENTICATED_FULLY'],
-	'/post/entryManager':			  ['IS_AUTHENTICATED_FULLY'],
+	'/list':                          ['permitAll'],
+	'/post/list':			  ['permitAll'],
+	'/post/show':			  ['permitAll'],
+	'/post/create':			  ['IS_AUTHENTICATED_FULLY'],
+	'/post/saveBLogEntry':		  ['IS_AUTHENTICATED_FULLY'],
+	'/post/entryManager':		  ['IS_AUTHENTICATED_FULLY'],
 	'/post/edit':			  ['IS_AUTHENTICATED_FULLY']]
+
+
+ckeditor {
+	//config = "/js/myckconfig.js"
+        skipAllowedItemsCheck = false
+	defaultFileBrowser = "ofm"
+	upload {
+		basedir = "/uploads/"
+	        overwrite = false
+	        link {
+	            browser = true
+	            upload = false
+	            allowed = []
+	            denied = ['html', 'htm', 'php', 'php2', 'php3', 'php4', 'php5',
+	                      'phtml', 'pwml', 'inc', 'asp', 'aspx', 'ascx', 'jsp',
+	                      'cfm', 'cfc', 'pl', 'bat', 'exe', 'com', 'dll', 'vbs', 'js', 'reg',
+	                      'cgi', 'htaccess', 'asis', 'sh', 'shtml', 'shtm', 'phtm']
+	        }
+	        image {
+	            browser = true
+	            upload = true
+	            allowed = ['jpg', 'gif', 'jpeg', 'png']
+	            denied = []
+	        }
+	        flash {
+	            browser = false
+	            upload = false
+	            allowed = ['swf']
+	            denied = []
+	        }
+	}
+}

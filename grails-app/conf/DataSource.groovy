@@ -16,10 +16,10 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+            dbCreate = "" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:postgresql://localhost:5432/rafbermudez_dev?useUnicode=yes&characterEncoding=UTF-8"
         }
-        hibernate {   show_sql = true   }
+//        hibernate {   show_sql = true   }
     }
     test {
         dataSource {

@@ -23,8 +23,6 @@ class PostController {
 		
 		entries = BlogEntry.findAllByPublished(true,[max:10, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
 		totalEntries = BlogEntry.countByPublished(true, [cache:true])
-		println entries
-		println totalEntries
 		[entries:entries, totalEntries:totalEntries]
 	}
 	
@@ -45,7 +43,7 @@ class PostController {
 			entry.dateCreated = new Date()
 		}
 		
-		if (!entry.save()) {
+		if (!entry.save(flush:true)) {
 			entry.errors.each {
 				println it
 			}

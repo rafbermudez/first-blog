@@ -7,7 +7,7 @@
 <body>
 	<article>
 		<header>
-			<div class="post-date"><g:formatDate date="${entry.dateCreated}" type="date"/> por rafa</div>
+			<div class="post-date"><g:formatDate format="dd-MM-yyyy" date="${entry.dateCreated}"/> por rafa</div>
 			<h1>${entry.title}</h1>
 		</header>
 		<section>

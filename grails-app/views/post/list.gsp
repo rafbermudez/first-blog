@@ -8,7 +8,7 @@
 	<g:each var="entry" in="${entries}">
 		<article>
 			<header>
-				<div class="post-date"><g:formatDate date="${entry.dateCreated}" type="date"/> por ${entry.author}</div>
+				<div class="post-date"><g:formatDate format="dd-MM-yyyy" date="${entry.dateCreated}" /> por ${entry.author}</div>
 				<a href="post/${entry.year}/${entry.month}/${entry.urlTitle}">
 					<h1>${entry.title}</h1>
 				</a>

@@ -23,25 +23,49 @@ class PostController {
 		
 		entries = BlogEntry.findAllByPublished(true,[max:10, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
 		totalEntries = BlogEntry.countByPublished(true, [cache:true])
-		println entries
-		println totalEntries
 		[entries:entries, totalEntries:totalEntries]
 	}
 	
 	def create(){
-		
+		render(view:"createEditBlogEntry")
 	}
 	
 	def saveBlogEntry(){
 		
-		def entry = new BlogEntry(params)
-		entry.author = "rafa"
-		entry.dateCreated = new Date()
-		if (!entry.save()) {
+		def entry 
+		if (params.id){
+			entry = BlogEntry.findById(params.id)
+			entry.properties = params
+		}
+		else{
+			entry = new BlogEntry(params)
+			entry.author = "rafa"
+			entry.dateCreated = new Date()
+		}
+		
+		if (!entry.save(flush:true)) {
 			entry.errors.each {
 				println it
 			}
 		}
 		redirect(action:"list")
+	}
+	
+	def entryManager(){
+		
+		def entries
+		def totalEntries
+		
+		entries = BlogEntry.list([max:10, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
+		totalEntries = BlogEntry.count()
+		println entries
+		println totalEntries
+		[entries:entries, totalEntries:totalEntries]
+	}
+	
+	def edit(Integer id){
+		
+		def entry = BlogEntry.findById(id)
+		render(view:"createEditBlogEntry", model:[entry:entry])
 	}
 }

@@ -17,14 +17,10 @@
 <link rel="shortcut icon"
 	href="${resource(dir: 'images', file: 'favicon.ico')}"
 	type="image/x-icon">
-<link rel="stylesheet"
-	href="${resource(dir: 'css', file: 'normalize.min.css')}"
-	type="text/css">
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}"
-	type="text/css">
+
 <link type="text/plain" rel="author" href="/rafbermudez/humans.txt" />
-<script
-	src="${resource(dir: 'js', file: 'vendor/modernizr-2.6.2-respond-1.1.0.min.js')}"></script>
+<asset:stylesheet src="application.css"/>
+<asset:javascript src="application.js"/>
 <g:layoutHead />
 <r:layoutResources />
 </head>
@@ -63,6 +59,18 @@
 			<div id="site-content">
 				<g:layoutBody />
 			</div>
+			
+			<sec:ifLoggedIn>
+			<aside>
+				<h4>Menú interno</h4>
+				<ul>
+					<li><g:link controller="post" action="entryManager">Gestionar entradas</g:link></li>
+					<li><g:link controller="post" action="create">Nueva entrada</g:link></li>
+					<li><g:link controller="logout" action="index">Cerrar sesión</g:link></li>
+				</ul>
+			</aside>
+			</sec:ifLoggedIn>
+			
 			<aside>
 				<h4>Mi nombre es Rafael Bermúdez, entusiasta de la
 					programación, la gestión de procesos y la Ingeniería del Software.</h4>
@@ -80,13 +88,7 @@
 		<footer class="wrapper"></footer>
 	</div>
 
-	<script
-		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
-	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
 	<script>
 		var _gaq = [ [ '_setAccount', 'UA-43181153-1' ], [ '_trackPageview' ] ];
@@ -97,7 +99,6 @@
 		}(document, 'script'));
 	</script>
 
-	<g:javascript library="application" />
 	<r:layoutResources />
 </body>
 </html>

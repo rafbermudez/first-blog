@@ -1,14 +1,18 @@
 import com.rafbermudez.*
 
 class BootStrap {
+    
+    def grailsApplication
 
-	def init = { servletContext ->
+    def init = { servletContext ->
 		
-		def u = new User(username: 'rafa', password: 'itsasecret').save()
+		def u = new User(username: grailsApplication.config.blog.username, password: grailsApplication.config.blog.password).save()
 
 		def c1 = new Category(name:"Otros").save()
 		def c2 = new Category(name:"Groovy & Grails").save()
 		def c3 = new Category(name:"Libros").save()
+                def c4 = new Category(name:"Dart").save()
+                def c5 = new Category(name:"Eventos").save()
 
 
 		def b1 = new BlogEntry()
@@ -564,10 +568,97 @@ Dejo la lista de los capítulos
 	</p>
 
 """
-		b9.published = true
-		b9.addToCategorys(c1)
-		b9.addToCategorys(c2)
-		b9.save()
+		def b10 = new BlogEntry()
+		b10.author = "rafa"
+		b10.title = "Nace Madrid DUG (Google Dart User Group)"
+		b10.urlTitle = "nace-madrid-dug-google-dart-user-group"
+		b10.dateCreated = new Date().parse("dd/MM/yyyy", "27/01/2015")
+		b10.body ="""
+<p>Varios compa&ntilde;eros con inquietudes hemos decidido formar el grupo Madrid DUG.&nbsp;</p>
+
+<h2>&iquest;Qu&eacute; es Dart?</h2>
+
+<p>Dart es un lenguaje orientado a objetos din&aacute;mico y opcionalmente tipado que soporta herencia, m&uacute;ltiples interfaces y programaci&oacute;n funcional. Est&aacute; pensado para funcionar tanto en back como en front y corre sobre su propia m&aacute;quina virtual. Aunque a &nbsp;d&iacute;a de hoy, para front se compila a javascript.</p>
+
+<p><a href="https://www.dartlang.org/">https://www.dartlang.org/</a></p>
+
+<p><a href="http://es.wikipedia.org/wiki/Dart">http://es.wikipedia.org/wiki/Dart</a></p>
+
+<p style="text-align: center;"><img alt="" src="/rafbermudez/uploads/Image/madrid-dug-square.jpeg" style="height:148px; line-height:20.7999992370605px; text-align:center; width:272px" /></p>
+
+<h2>&iquest;Por qu&eacute; Madrid DUG?</h2>
+
+<p>Porque nos gusta la programaci&oacute;n, nos interesa Google Dart y estamos en Madrid. La idea es reunirse de vez en cuando para hablar de temas relacionados con este novedoso (y poco utilizado) lenguaje llamado Dart y su ecosistema.&nbsp;</p>
+
+<p><a href="http://www.meetup.com/es/madrid-dug/">http://www.meetup.com/es/madrid-dug/</a></p>
+
+"""
+		b10.published = true
+		b10.addToCategorys(c4)
+		b10.save()
+                
+        
+                def b11 = new BlogEntry()
+		b11.author = "rafa"
+		b11.title = "XIII Xornadas Libres GPUL"
+		b11.urlTitle = "xiii-xornadas-libres-gpul"
+		b11.dateCreated = new Date().parse("dd/MM/yyyy", "15/10/2014")
+		b11.body ="""
+<p>La semana pasada tuve la gran oportunidad de presentar 2 charlas en las&nbsp;<a href="http://gpul.es/e/2014/xornadas-libres/">XIII Xornadas Libres</a> organizadas por el <a href="https://twitter.com/gpul_">@gpul_</a>&nbsp;en La Facultad de Inform&aacute;tica de A Coru&ntilde;a. Adem&aacute;s, asist&iacute; a una muy buena charla de&nbsp;Jorge Sierra Canduela , presidente de Wikimedia Espa&ntilde;a sobre su labor y el conocimiento libre. Es de agradecer tener alg&uacute;n evento t&eacute;cnico en Galicia.&nbsp;</p>
+
+<p>Dejo aqu&iacute; las slides.&nbsp;Si alguien quiere ojear el c&oacute;digo lo puede ver a trav&eacute;s de mi cuenta github.</p>
+
+<p>&nbsp;</p>
+
+<h2>Desarrolla tu motor de videojuegos con BackBone y Canvas (HTML5)</h2>
+
+<p>En esta charla inspiracional intentamos demostrar la buena base que tenemos en la UDC.&nbsp;Con un poco de HTML5 y Javascript, un uso m&iacute;nimo de BackBone, un pu&ntilde;ado de conceptos aprendidos en la FIC y mucha imaginaci&oacute;n nos hemos propuesto montar&nbsp;un motor de videojuegos 2D con&nbsp;unos&nbsp;resultados&nbsp;sorprendentes.</p>
+
+<p><a href="http://www.slideshare.net/rafbermudez/programa-mejor-que-chuck-norris-herramientas-que-nos-ayudan-a-mejorar">http://www.slideshare.net/rafbermudez/programa-mejor-que-chuck-norris-herramientas-que-nos-ayudan-a-mejorar</a></p>
+
+<p style="text-align:center"><img alt="" src="/rafbermudez/uploads/Image/motor-videojuegos-html5-canvas.png" style="width: 80%; text-align:center;" /></p>
+
+<h2>&nbsp;</h2>
+
+<h2>Programa mejor que Chuck Norris: Herramientas que nos ayudan a mejorar</h2>
+
+<p>Testing efectivo, conocer la cobertura de tus test, encontrar c&oacute;digo duplicado, complejidad ciclom&aacute;tica, alertar de funciones largas, integraci&oacute;n continua... si no eres Chuck Norris m&aacute;s vale que te suenen estos conceptos!</p>
+
+<p><a href="http://www.slideshare.net/rafbermudez/crea-tu-propio-motor-de-videojuegos-con-backbone-y-canvas-html5">http://www.slideshare.net/rafbermudez/crea-tu-propio-motor-de-videojuegos-con-backbone-y-canvas-html5</a></p>
+"""
+		b11.published = true
+		b11.addToCategorys(c5)
+		b11.save()
+                
+        def b12 = new BlogEntry()
+		b12.author = "rafa"
+		b12.title = "It's time to change - Yump"
+		b12.urlTitle = "its-time-to-change-yump"
+		b12.dateCreated = new Date().parse("dd/MM/yyyy", "12/06/2014")
+		b12.body ="""
+<p>A partir de ahora estoy&nbsp;por Madrid, embarcado en una nueva aventura. Es curioso como el destino vuelve a cruzar los caminos. Varias etapas&nbsp;despu&eacute;s vuelvo a estar acompa&ntilde;ado por ese genio desconocido llamado&nbsp;<a href="https://twitter.com/dovaleac">@dovaleac</a>. Aunque pasaran los a&ntilde;os, siempre recordar&eacute; su&nbsp;aparici&oacute;n estelar como aquel nuevo becario de la empresa.&nbsp;</p>
+
+<p style="text-align:center"><img alt="" src="/rafbermudez/uploads/Image/yump.png" style="height:72px; width:155px" /></p>
+
+<h2>&iquest;Qu&eacute; es Yump?</h2>
+
+<p>Yump es una startup con una&nbsp;plataforma on-line de motivaci&oacute;n continua y logro de objetivos, aplicable a cualquier dimensi&oacute;n la vida. Es un producto revolucionario. en el que se mezcla metodolog&iacute;a, gamificaci&oacute;n y tecnolog&iacute;a a partes iguales. Por si tienes&nbsp;curiosidad&nbsp;dejo un enlace a la web:</p>
+
+<p><a href="https://www.yump.com">https://www.yump.com</a></p>
+
+<h2>Y tecnol&oacute;gicamente...</h2>
+
+<p>Groovy,&nbsp;Grails, Springboot, Spring Integration, RabbitMQ, Gradle, Backbone, Require, Grunt, NodeJS, simulaci&oacute;n para rendering de video en tiempo real, .... m&aacute;s otro buen pu&ntilde;ado de tecnolog&iacute;as punteras con una arquitectura Restfull y de microservicios. Esto ser&aacute; el MVP de partida. &iexcl;Incre&iacute;ble!</p>
+
+<h2>El reto</h2>
+
+<p>Conseguir un producto rompedor, liderarando t&eacute;cnicamente este&nbsp;proyecto y formando&nbsp;un buen equipo es may&uacute;sculo, comenzando por la implantaci&oacute;n de una metodolog&iacute;a &aacute;gil y absorbiendo todo el desarrollo full stack.</p>
+
+<p>&iexcl;Vamos &nbsp;<a href="https://twitter.com/dovaleac" style="line-height: 20.7999992370605px;">@dovaleac</a>! &iexcl;A por ello! :D</p>
+"""
+		b12.published = true
+		b12.addToCategorys(c1)
+		b12.save()
 	}
 	def destroy = {
 	}

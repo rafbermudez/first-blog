@@ -14,5 +14,6 @@ Author: Rafael Bermudez Miguez SEO Google+ profile: https://plus.google.com/1039
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+	GROOVY, GRAILS	
+	HTML5, CSS3
+	jQuery, Modernizr

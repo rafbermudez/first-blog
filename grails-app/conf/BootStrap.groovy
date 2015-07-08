@@ -6,21 +6,21 @@ class BootStrap {
 
     def init = { servletContext ->
 		
-		def u = new User(username: grailsApplication.config.blog.username, password: grailsApplication.config.blog.password).save()
+        def u = new User(username: grailsApplication.config.blog.username, password: grailsApplication.config.blog.password).save()
 
-		def c1 = new Category(name:"Otros").save()
-		def c2 = new Category(name:"Groovy & Grails").save()
-		def c3 = new Category(name:"Libros").save()
-                def c4 = new Category(name:"Dart").save()
-                def c5 = new Category(name:"Eventos").save()
+        def c1 = new Category(name:"Otros").save()
+        def c2 = new Category(name:"Groovy & Grails").save()
+        def c3 = new Category(name:"Libros").save()
+        def c4 = new Category(name:"Dart").save()
+        def c5 = new Category(name:"Eventos").save()
 
 
-		def b1 = new BlogEntry()
-		b1.author = "rafa"
-		b1.title = "Hello, world"
-		b1.urlTitle = "hello-world"
-		b1.dateCreated = new Date().parse("dd/MM/yyyy", "13/08/2013")
-		b1.body = """<section>
+        def b1 = new BlogEntry()
+        b1.author = "rafa"
+        b1.title = "Hello, world"
+        b1.urlTitle = "hello-world"
+        b1.dateCreated = new Date().parse("dd/MM/yyyy", "13/08/2013")
+        b1.body = """<section>
 			<p>Como marca la tradición*, no habría mejor manera de titular
 				este post. Evitaré presentarme, mis enlaces a las diferentes redes
 				sociales lo harán mejor.</p>
@@ -66,16 +66,16 @@ class BootStrap {
 			<p>* "hello, world", claro ejemplo de programa funcional. 1ª
 				aparición en "The C Programming Language", 1978.</p>
 		"""
-		b1.published = true
-		b1.addToCategorys(c1)
-		b1.save()
+        b1.published = true
+        b1.addToCategorys(c1)
+        b1.save()
 
-		def b2 = new BlogEntry()
-		b2.author = "rafa"
-		b2.title = "5 maneras de conocer mejor este blog"
-		b2.urlTitle = "5-maneras-de-conocer-mejor-este-blog"
-		b2.dateCreated = new Date().parse("dd/MM/yyyy", "20/08/2013")
-		b2.body = """
+        def b2 = new BlogEntry()
+        b2.author = "rafa"
+        b2.title = "5 maneras de conocer mejor este blog"
+        b2.urlTitle = "5-maneras-de-conocer-mejor-este-blog"
+        b2.dateCreated = new Date().parse("dd/MM/yyyy", "20/08/2013")
+        b2.body = """
 			<h2>1. Esto no es wordpress...</h2>
 			<p>Ni joomla...ni drupal. Me siento un privilegiado con los CMS.
 				Tuve la suerte de trabajar varios meses full time con estos 3 y son
@@ -122,16 +122,16 @@ class BootStrap {
 				Adelanto que el núcleo del backend estará implementado en Grails, la
 				idea es que también conviva con otras tecnologías alternativas.</p>
 		"""
-		b2.published = true
-		b2.addToCategorys(c1)
-		b2.save()
+        b2.published = true
+        b2.addToCategorys(c1)
+        b2.save()
 
-		def b3 = new BlogEntry()
-		b3.author = "rafa"
-		b3.title = "Aprendiendo groovy"
-		b3.urlTitle = "aprendiendo-groovy"
-		b3.dateCreated = new Date().parse("dd/MM/yyyy", "26/08/2013")
-		b3.body = """
+        def b3 = new BlogEntry()
+        b3.author = "rafa"
+        b3.title = "Aprendiendo groovy"
+        b3.urlTitle = "aprendiendo-groovy"
+        b3.dateCreated = new Date().parse("dd/MM/yyyy", "26/08/2013")
+        b3.body = """
 			<p>Groovy es uno de los lenguajes JVM más conocido y popular. Es
 				dinámico y aporta características modernas de programación. Además,
 				para desarrolladores Java la curva de aprendizaje es casi nula.
@@ -204,16 +204,16 @@ class BootStrap {
 			</ul>
 			</p>
 		"""
-		b3.published = true
-		b3.addToCategorys(c2)
-		b3.save()
+        b3.published = true
+        b3.addToCategorys(c2)
+        b3.save()
 
-		def b4 = new BlogEntry()
-		b4.author = "rafa"
-		b4.title = "Popularidad: Libros por ámbito, un enfoque SEO"
-		b4.urlTitle = "popularidad-libros-por-ambito-un-enfoque-seo"
-		b4.dateCreated = new Date().parse("dd/MM/yyyy", "09/09/2013")
-		b4.body = """
+        def b4 = new BlogEntry()
+        b4.author = "rafa"
+        b4.title = "Popularidad: Libros por ámbito, un enfoque SEO"
+        b4.urlTitle = "popularidad-libros-por-ambito-un-enfoque-seo"
+        b4.dateCreated = new Date().parse("dd/MM/yyyy", "09/09/2013")
+        b4.body = """
 			<p>
 				Antes de la aparición de twitter, incluso antes de la indexación de
 				google y sus referidos, ya existía una medida (muchas veces
@@ -291,16 +291,16 @@ class BootStrap {
 			<p>Elabora tus propias conclusiones... ¿Te será útil para futuras
 				decisiones?</p>
 		"""
-		b4.published = true
-		b4.addToCategorys(c3)
-		b4.save()
+        b4.published = true
+        b4.addToCategorys(c3)
+        b4.save()
 
-		def b5 = new BlogEntry()
-		b5.author = "rafa"
-		b5.title = "Definitive Guide to Grails 2: Imprescindible"
-		b5.urlTitle = "the-definitive-guide-to-grails-2-imprescindible"
-		b5.dateCreated = new Date().parse("dd/MM/yyyy", "14/09/2013")
-		b5.body ="""
+        def b5 = new BlogEntry()
+        b5.author = "rafa"
+        b5.title = "Definitive Guide to Grails 2: Imprescindible"
+        b5.urlTitle = "the-definitive-guide-to-grails-2-imprescindible"
+        b5.dateCreated = new Date().parse("dd/MM/yyyy", "14/09/2013")
+        b5.body ="""
 			<p>Este enero, de la mano de de Graeme Rocher y Jeff Brown
 				apareció la actualización de libro-guía de Grails por antonomasia.
 				Dado que son 2 de los más importantes conocedores del framework
@@ -366,17 +366,17 @@ class BootStrap {
 					href="http://www.amazon.es/s/ref=nb_sb_noss?field-keywords=Definitive%20Guide%20to%20Grails%202">Amazon</a>
 			</p>
 		"""
-		b5.published = true
-		b5.addToCategorys(c2)
-		b5.addToCategorys(c3)
-		b5.save()
+        b5.published = true
+        b5.addToCategorys(c2)
+        b5.addToCategorys(c3)
+        b5.save()
 
-		def b6 = new BlogEntry()
-		b6.author = "rafa"
-		b6.title = "Codemotion: Review"
-		b6.urlTitle = "codemotion-review"
-		b6.dateCreated = new Date().parse("dd/MM/yyyy", "26/10/2013")
-		b6.body ="""
+        def b6 = new BlogEntry()
+        b6.author = "rafa"
+        b6.title = "Codemotion: Review"
+        b6.urlTitle = "codemotion-review"
+        b6.dateCreated = new Date().parse("dd/MM/yyyy", "26/10/2013")
+        b6.body ="""
 <p>
 				Este finde acudí a la <a href=http://codemotion.es/">codemotion</a>
 				en Madrid, seguramente el evento para desarrolladores más
@@ -452,16 +452,16 @@ class BootStrap {
 				<p>A veces no se valora el tener charlas de este nivel a precios
 					muy adsequibles, sobre todo si eres de Madrid. Pero en Galicia,
 					escasean los eventos de este tipo. Hubo un poco de todo y las charlas de Grails fueron excepcionales. Seguramente volveré el año que viene, espero que más acompañado y en mejores condiciones :). </p>"""
-		b6.published = true
-		b6.addToCategorys(c1)
-		b6.save()
+        b6.published = true
+        b6.addToCategorys(c1)
+        b6.save()
 
-		def b7 = new BlogEntry()
-		b7.author = "rafa"
-		b7.title = "Review: Gestión ágil de proyectos software"
-		b7.urlTitle = "gestion-agil-proyectos-software-review"
-		b7.dateCreated = new Date().parse("dd/MM/yyyy", "29/11/2013")
-		b7.body ="""<p>
+        def b7 = new BlogEntry()
+        b7.author = "rafa"
+        b7.title = "Review: Gestión ágil de proyectos software"
+        b7.urlTitle = "gestion-agil-proyectos-software-review"
+        b7.dateCreated = new Date().parse("dd/MM/yyyy", "29/11/2013")
+        b7.body ="""<p>
 Para quién esté interesado en conocer el mundo del software y la agilidad, acerco este libro en español de Garzás Parra, Javier / Enriquez J. / Irrazabal E. Tanto en <a href="http://www.amazon.es/Gesti%C3%B3n-Proyectos-Software-Javier-Garz%C3%A1s-ebook/dp/B008B8FQZM">amazon</a> como en la web de <a href="http://www.kybeleconsulting.com/gestion-agil-de-proyectos-software/">kybele</a> podéis adquirirlo en los diferentes formatos, a un precio bastante competitivo. </p>
 
 <p>
@@ -492,16 +492,16 @@ Dejo la lista de los capítulos
  PD: Aún no he podido leerlo, pero para quién busque una continuación, se acaba de publicar "Cómo sobrevivir… A la planificación de un proyecto ágil" , de Javier Garzas también.
  </p>
 """
-		b7.published = true
-		b7.addToCategorys(c3)
-		b7.save()
+        b7.published = true
+        b7.addToCategorys(c3)
+        b7.save()
 		
-		def b8 = new BlogEntry()
-		b8.author = "rafa"
-		b8.title = "Objetivos para 2014"
-		b8.urlTitle = "objetivos-para-2014"
-		b8.dateCreated = new Date().parse("dd/MM/yyyy", "02/01/2014")
-		b8.body ="""<p>Dejaré un post clásico con los objetivos que me planteo para este año.</p>
+        def b8 = new BlogEntry()
+        b8.author = "rafa"
+        b8.title = "Objetivos para 2014"
+        b8.urlTitle = "objetivos-para-2014"
+        b8.dateCreated = new Date().parse("dd/MM/yyyy", "02/01/2014")
+        b8.body ="""<p>Dejaré un post clásico con los objetivos que me planteo para este año.</p>
 <ul>
 <li><p><b>Entregar el proyecto fin de carrera.</b></p>
 	<p>
@@ -536,16 +536,16 @@ Dejo la lista de los capítulos
 </ul>
 </p>
 """
-		b8.published = true
-		b8.addToCategorys(c1)
-		b8.save()
+        b8.published = true
+        b8.addToCategorys(c1)
+        b8.save()
 		
-		def b9 = new BlogEntry()
-		b9.author = "rafa"
-		b9.title = "Greach 3.0"
-		b9.urlTitle = "greach-3.0"
-		b9.dateCreated = new Date().parse("dd/MM/yyyy", "07/01/2014")
-		b9.body ="""
+        def b9 = new BlogEntry()
+        b9.author = "rafa"
+        b9.title = "Greach 3.0"
+        b9.urlTitle = "greach-3.0"
+        b9.dateCreated = new Date().parse("dd/MM/yyyy", "07/01/2014")
+        b9.body ="""
 	<p>
 		Hace nada que se abrió el plazo para inscribirse y asistir a la Greach 3.0. El evento español más importante en torno al mundo Groovy & Grails y posiblemente llamado a convertirse en una referencia Europea.
 	</p>
@@ -568,12 +568,12 @@ Dejo la lista de los capítulos
 	</p>
 
 """
-		def b10 = new BlogEntry()
-		b10.author = "rafa"
-		b10.title = "Nace Madrid DUG (Google Dart User Group)"
-		b10.urlTitle = "nace-madrid-dug-google-dart-user-group"
-		b10.dateCreated = new Date().parse("dd/MM/yyyy", "27/01/2015")
-		b10.body ="""
+        def b10 = new BlogEntry()
+        b10.author = "rafa"
+        b10.title = "Nace Madrid DUG (Google Dart User Group)"
+        b10.urlTitle = "nace-madrid-dug-google-dart-user-group"
+        b10.dateCreated = new Date().parse("dd/MM/yyyy", "27/01/2015")
+        b10.body ="""
 <p>Varios compa&ntilde;eros con inquietudes hemos decidido formar el grupo Madrid DUG.&nbsp;</p>
 
 <h2>&iquest;Qu&eacute; es Dart?</h2>
@@ -593,17 +593,17 @@ Dejo la lista de los capítulos
 <p><a href="http://www.meetup.com/es/madrid-dug/">http://www.meetup.com/es/madrid-dug/</a></p>
 
 """
-		b10.published = true
-		b10.addToCategorys(c4)
-		b10.save()
+        b10.published = true
+        b10.addToCategorys(c4)
+        b10.save()
                 
         
-                def b11 = new BlogEntry()
-		b11.author = "rafa"
-		b11.title = "XIII Xornadas Libres GPUL"
-		b11.urlTitle = "xiii-xornadas-libres-gpul"
-		b11.dateCreated = new Date().parse("dd/MM/yyyy", "15/10/2014")
-		b11.body ="""
+        def b11 = new BlogEntry()
+        b11.author = "rafa"
+        b11.title = "XIII Xornadas Libres GPUL"
+        b11.urlTitle = "xiii-xornadas-libres-gpul"
+        b11.dateCreated = new Date().parse("dd/MM/yyyy", "15/10/2014")
+        b11.body ="""
 <p>La semana pasada tuve la gran oportunidad de presentar 2 charlas en las&nbsp;<a href="http://gpul.es/e/2014/xornadas-libres/">XIII Xornadas Libres</a> organizadas por el <a href="https://twitter.com/gpul_">@gpul_</a>&nbsp;en La Facultad de Inform&aacute;tica de A Coru&ntilde;a. Adem&aacute;s, asist&iacute; a una muy buena charla de&nbsp;Jorge Sierra Canduela , presidente de Wikimedia Espa&ntilde;a sobre su labor y el conocimiento libre. Es de agradecer tener alg&uacute;n evento t&eacute;cnico en Galicia.&nbsp;</p>
 
 <p>Dejo aqu&iacute; las slides.&nbsp;Si alguien quiere ojear el c&oacute;digo lo puede ver a trav&eacute;s de mi cuenta github.</p>
@@ -626,16 +626,16 @@ Dejo la lista de los capítulos
 
 <p><a href="http://www.slideshare.net/rafbermudez/crea-tu-propio-motor-de-videojuegos-con-backbone-y-canvas-html5">http://www.slideshare.net/rafbermudez/crea-tu-propio-motor-de-videojuegos-con-backbone-y-canvas-html5</a></p>
 """
-		b11.published = true
-		b11.addToCategorys(c5)
-		b11.save()
+        b11.published = true
+        b11.addToCategorys(c5)
+        b11.save()
                 
         def b12 = new BlogEntry()
-		b12.author = "rafa"
-		b12.title = "It's time to change - Yump"
-		b12.urlTitle = "its-time-to-change-yump"
-		b12.dateCreated = new Date().parse("dd/MM/yyyy", "12/06/2014")
-		b12.body ="""
+        b12.author = "rafa"
+        b12.title = "It's time to change - Yump"
+        b12.urlTitle = "its-time-to-change-yump"
+        b12.dateCreated = new Date().parse("dd/MM/yyyy", "12/06/2014")
+        b12.body ="""
 <p>A partir de ahora estoy&nbsp;por Madrid, embarcado en una nueva aventura. Es curioso como el destino vuelve a cruzar los caminos. Varias etapas&nbsp;despu&eacute;s vuelvo a estar acompa&ntilde;ado por ese genio desconocido llamado&nbsp;<a href="https://twitter.com/dovaleac">@dovaleac</a>. Aunque pasaran los a&ntilde;os, siempre recordar&eacute; su&nbsp;aparici&oacute;n estelar como aquel nuevo becario de la empresa.&nbsp;</p>
 
 <p style="text-align:center"><img alt="" src="/rafbermudez/uploads/Image/yump.png" style="height:72px; width:155px" /></p>
@@ -656,10 +656,54 @@ Dejo la lista de los capítulos
 
 <p>&iexcl;Vamos &nbsp;<a href="https://twitter.com/dovaleac" style="line-height: 20.7999992370605px;">@dovaleac</a>! &iexcl;A por ello! :D</p>
 """
-		b12.published = true
-		b12.addToCategorys(c1)
-		b12.save()
-	}
-	def destroy = {
-	}
+        b12.published = true
+        b12.addToCategorys(c1)
+        b12.save()
+                
+        
+        def b13 = new BlogEntry()
+        b13.author = "rafa"
+        b13.title = "¿Te atreves a soñar?"
+        b13.urlTitle = "te-atreves-a-soñar"
+        b13.dateCreated = new Date().parse("dd/MM/yyyy", "01/07/2015")
+        b13.body ="""
+<p>De peque&ntilde;os creemos que somos capaces de hacer cualquier cosa. A medida que crecemos,&nbsp;nos vamos volviendo m&aacute;s r&iacute;gidos. Todo comienza a darnos miedo y abandonamos nuestros sue&ntilde;os. Puede ser debido al entorno o a la propia naturaleza del hombre, pero es una actitud limitante. &iquest;Merece la pena vivir con esta carga?</p>
+
+<p>A veces <strong>est&aacute;s convencido de que puedes lograrlo, pero no encuentras la motivaci&oacute;n necesaria para dar el paso.</strong></p>
+
+<p>Os dejo un video incre&iacute;ble que&nbsp;siempre le pongo a la gente nueva que viene a trabajar conmigo.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<div class="video-container"><iframe frameborder="0" height="315" src="https://www.youtube-nocookie.com/embed/i07qz_6Mk7g?rel=0&amp;showinfo=0" width="560"></iframe></div>
+
+<style type="text/css">
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+<p>&iquest;Qu&eacute; tal? <strong>&iquest;Sigues en tu zona de confort o te atreves a so&ntilde;ar?</strong></p>
+"""
+        b13.published = true
+        b13.addToCategorys(c1)
+        b13.save()
+                
+    }
+    def destroy = {
+    }
 }

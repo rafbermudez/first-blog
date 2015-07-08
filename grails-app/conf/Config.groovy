@@ -184,3 +184,5 @@ ckeditor {
 	        }
 	}
 }
+
+grails.assets.minifyJs = false

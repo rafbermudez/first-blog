@@ -27,7 +27,7 @@
 <body>
 	<div class="header-container">
 		<header class="wrapper clearfix">
-			<a href="${createLink(uri: '/', absolute: true)}"><img
+			<a href="${createLink(uri: '/')}"><img
 				src="${resource(dir: 'images', file: 'logo.png')}"
 				alt="RafBermudez.com logo" /></a>
 			<nav>

@@ -1,6 +1,6 @@
 rafbermudez.com
 ===============
 
-RafBermudez.com, my personal site: The code.
+[RafBermudez.com](https://www.rafbermudez.com), my personal site: The code.
 
-Grails version : 2.2.5
+Grails version : 2.5.0

@@ -18,12 +18,15 @@ class PostController {
 	
 	def list() {
 		
+                if (!params.offset) params.offset = 0
+                if (!params.max) params.max = 5
+        
 		def entries
 		def totalEntries
 		
-		entries = BlogEntry.findAllByPublished(true,[max:10, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
+		entries = BlogEntry.findAllByPublished(true,[max:params.max, cache:true, offset:params.offset, order:"desc", sort:"dateCreated"])
 		totalEntries = BlogEntry.countByPublished(true, [cache:true])
-		[entries:entries, totalEntries:totalEntries]
+		[entries:entries, totalEntries:totalEntries, params:params]
 	}
 	
 	def create(){

@@ -1,6 +1,9 @@
-rafbermudez.com
+rafbermudez.com first blog
 ===============
 
-[RafBermudez.com](https://www.rafbermudez.com), my personal site: The code.
+[RafBermudez.com](https://www.rafbermudez.com), my personal blog, first version of code.
 
-Grails version : 2.5.0
+* Monolithic MVC aplication
+* Grails version : 2.5.0
+* BD: postgreSQL
+* Responsive html5 boilerplate
